@@ -10,17 +10,27 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@types/react-native": "^0.63.46",
+    "mobx": "^6.1.1",
+    "mobx-react": "^7.1.0",
     "react": "16.13.1",
-    "react-native": "0.63.4"
+    "react-code-push": "^1.0.0",
+    "react-native": "0.63.4",
+    "react-native-navigation": "^7.8.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-decorators": "^7.12.12",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "customize-cra": "^1.0.0",
     "eslint": "^7.18.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.64.0",
+    "react-app-rewired": "^2.1.8",
     "react-test-renderer": "16.13.1"
   },
   "jest": {

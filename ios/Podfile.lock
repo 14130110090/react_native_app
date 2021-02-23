@@ -296,6 +296,15 @@ PODS:
     - React-Core (= 0.63.4)
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
+  - ReactNativeNavigation (7.8.4):
+    - React-Core
+    - React-RCTImage
+    - React-RCTText
+    - ReactNativeNavigation/Core (= 7.8.4)
+  - ReactNativeNavigation/Core (7.8.4):
+    - React-Core
+    - React-RCTImage
+    - React-RCTText
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -347,6 +356,7 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -415,6 +425,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeNavigation:
+    :path: "../node_modules/react-native-navigation"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -455,9 +467,10 @@ SPEC CHECKSUMS:
   React-RCTText: 8951c1ae55819d13382ea9aa713a89d8343a4c07
   React-RCTVibration: 73c4920649f1c4f9d85a393cddbde42acce89b99
   ReactCommon: 83b8a5fa37138e598cc339c8396fc039b7e57043
+  ReactNativeNavigation: 2defddc796c95f89afc9927ad0421fb3e63b2c5f
   Yoga: 694d9540ef992cf440f912dfe1063dc8545c2cc7
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 1f2bf4d2b9011e9401c32ae1088ef75b3823b618
+PODFILE CHECKSUM: a94a97f65a2f37aa4c63d121c71fc06c822164ed
 
 COCOAPODS: 1.5.3
