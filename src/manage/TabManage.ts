@@ -1,82 +1,78 @@
-import {Platform, AsyncStorage} from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import {GlobalImages} from 'src/global/images';
 
-// const TAB_CONFIG_KEY = 'TAB_CONFIG_KEY';
-// const TEST_ENABLED = false;
-
-// let homeTabConfigs = [];
-// let homeTabBConfigs = [];
-// let homeTabCConfigs = [];
-
-// function tabConfigInit() {
-//   const HOME_OPTIONS = configStack({
-//     id: 'WishListPage',
-//     pageName: 'WishListPage',
-//     pageTitle: 'WishListPage',
-//     topBarVisible: false,
-//     text: '首页',
-//     icon: '',
-//     selectedIcon: '',
-//     passProps: {hiddenBack: true, isTab: true},
-//   });
-
-//   // 百亿补贴
-//   homeTabConfigs = [HOME_OPTIONS];
-// }
-
-// // about navigation
-// function configStack(props = {}) {
-//   const visibleProps = true ? {} : {visible: false, height: 0};
-//   return {
-//     stack: {
-//       children: [
-//         {
-//           component: {
-//             id: 'WishListPage',
-//             name: 'WishListPage',
-//             options: {
-//               topBar: {
-//                 title: {
-//                   text: 'WishListPage',
-//                 },
-//                 ...visibleProps,
-//               },
-//               statusBar: {
-//                 ...Platform.select({
-//                   ios: {
-//                     style: {},
-//                   },
-//                 }),
-//               },
-//             },
-//             passProps: {},
-//           },
-//         },
-//       ],
-//       options: {
-//         bottomTab: {...props},
-//       },
-//     },
-//   };
-// }
+Navigation.events().registerAppLaunchedListener(() => {
+   setRoot()
+})
 
 function setRoot() {
-  Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
       root: {
-        stack: {
+        bottomTabs: {
           children: [
             {
-              component: {
-                name: 'WishListPage',
+              stack: {
+                children: [
+                  {
+                    component: {
+                      id: 'WishListPage',
+                      name: 'WishListPage',
+                      options: {
+                        topBar: {
+                          title: {
+                            text: '首页标题',
+                          },
+                          visible: true,
+                          hideOnScroll: true,
+                          // height: 100,
+                        },
+                        statusBar: {},
+                        bottomTab: {
+                          icon:GlobalImages.TAB_HOME_UP,
+                          selectedIcon:GlobalImages.TAB_HOME_DOWN,
+                          text: '首页',
+                          fontSize: 20,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              stack: {
+                children: [
+                  {
+                    component: {
+                      id: 'UserPage',
+                      name: 'UserPage',
+                      options: {
+                        topBar: {
+                          title: {
+                            text: '我的',
+                          },
+                          visible: true,
+                          hideOnScroll: true,
+                          // height: 100,
+                        },
+                        statusBar: {},
+                        bottomTab: {
+                          icon:GlobalImages.TAB_CATEGORY_UP,
+                          selectedIcon:GlobalImages.TAB_CATEGORY_DOWN,
+                          text: '我的',
+                          fontSize: 20,
+                        },
+                      },
+                    },
+                  },
+                ],
               },
             },
           ],
         },
       },
     });
-  });
-}
+  };
 
 export default {
   setRoot,

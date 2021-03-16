@@ -1,7 +1,7 @@
 import {Navigation} from 'react-native-navigation';
 import Pages from 'src/page/index';
 
-function autoRegisterPages() {
+const autoRegisterPages=()=>{
   Object.keys(Pages).map((key) => {
     if (key) {
       Navigation.registerComponent(key, () => Pages[key]);
@@ -9,6 +9,6 @@ function autoRegisterPages() {
   });
 }
 
-export default {
+export {
   autoRegisterPages,
 };

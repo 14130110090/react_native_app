@@ -1,5 +1,6 @@
-import { PageManage,TabManage } from "src/manage";
+import { TabManage } from "src/manage";
+import { autoRegisterPages } from "src/manage/PageManage";
 
-PageManage.autoRegisterPages()
-
+autoRegisterPages()
 TabManage.setRoot()
+

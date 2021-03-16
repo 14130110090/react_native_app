@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BackHandler, Platform, View} from 'react-native';
+import { NavigationComponent, Navigation } from 'react-native-navigation';
 
 /**
  * @author
@@ -7,7 +8,7 @@ import {BackHandler, Platform, View} from 'react-native';
  * @class
  * @extends {Component}
  */
-export default class BasePage extends Component {
+export default class BasePage extends NavigationComponent {
   static androidStatusBar = {
     translucent: true,
     backgroundColor: 'FFFFFF',
@@ -39,6 +40,8 @@ export default class BasePage extends Component {
     if (Platform.OS === 'ios') {
       return;
     } else {
+      Navigation.pop("WishListPage");
+      
     }
     return Platform.OS === 'android';
   }

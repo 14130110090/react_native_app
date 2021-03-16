@@ -1,4 +1,4 @@
-import PageManage from './PageManage';
 import TabManage from './TabManage';
+import RouteManage from './RouteManage';
 
-export {PageManage, TabManage};
+export {TabManage, RouteManage};

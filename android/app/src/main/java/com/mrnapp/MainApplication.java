@@ -1,9 +1,12 @@
 package com.mrnapp;
 
+import android.Manifest;
 import android.app.Application;
 import android.content.Context;
+import android.os.Environment;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 import com.facebook.react.PackageList;
 import com.reactnativenavigation.NavigationApplication;
@@ -34,6 +37,20 @@ public class MainApplication extends NavigationApplication {
                     return packages;
                 }
 
+                @Nullable
+                @Override
+                protected String getJSBundleFile() {
+//                    String path = getCacheDir()
+//                            + File.separator + "index.android.bundle";
+//                    File file = new File(path);
+//                    if (file.exists()) {
+//                        return path;
+//                    } else {
+                        return super.getJSBundleFile();
+//                    }
+
+                }
+
                 @Override
                 protected String getJSMainModuleName() {
                     return "index";
@@ -48,7 +65,7 @@ public class MainApplication extends NavigationApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        
+
         initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
     }
 
